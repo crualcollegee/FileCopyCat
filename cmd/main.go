@@ -1,9 +1,11 @@
 package main
 
-include(
+import(
 	"fmt"
 	"os"
+	"log"
 	"github.com/spf13/cobra"
+	"github.com/crualcollegee/FileCopyCat/blob/main/internal/copy/copy.go"
 )
 
 var sourceDir string
@@ -18,10 +20,10 @@ func main()  {
 
 	var ExtCopy = &cobra.Command{
 		Use:"ExtCopy [source directory] [target directory] [extension]",
-		short: "find files with specific extension and copy to a directory"
+		Short: "find files with specific extension and copy to a directory"
 		Args: cobra.ExactArgs(3),
 		Run: func(cmd *cobra.Command, args []string){
-			if err:= CopyFile(sourceDir,targetDir,Ext);err!=nil{
+			if err:= copy.ExtCopy(sourceDir,targetDir,Ext);err!=nil{
 				log.Fatalf("Error during copying files : %v",err)
 			}
 		}
