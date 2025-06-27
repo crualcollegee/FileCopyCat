@@ -1,4 +1,4 @@
-# FileCopyCat Project
+# FileCopyCat
 
 This project is a Go-based file management system that allows users to copy files with specific extensions from one directory to another. It uses the `github.com/spf13/cobra` package for command-line interface (CLI) management. This README also provides a script that checks dependencies, compiles the project, and allows interactive command execution.
 
@@ -50,3 +50,5 @@ When prompted by the script, enter a command in the format:
 ```bash
 ExtCopy /path/to/source /path/to/target png
 ```
+eg.
+![image](https://github.com/user-attachments/assets/75da02c3-f8a5-4f5a-8ca0-cb628f9f673b)
