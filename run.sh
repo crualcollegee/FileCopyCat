@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CGO_ENABLED=0
+
 # Check if "github.com/spf13/cobra" is installed
 if ! go list -m github.com/spf13/cobra >/dev/null 2>&1; then
     echo "Dependency 'github.com/spf13/cobra' not installed, installing..."
@@ -20,7 +22,10 @@ echo "Build successful!"
 # Interactive command execution
 while true; do
     # Prompt user for command input
-    echo "Enter command (format: ExtCopy [sourceDir] [targetDir] [extension]), type 'exit' to quit:"
+    echo "Available command:"
+    echo " ExtCopy [sourceDir] [targetDir] [extension]"
+    echo " ExtMove [sourceDir] [targetDir] [extension]"
+    echo "or type 'help' for instructions, 'exit' to quit:"
     read -p "> " command
     
     if [ "$command" == "exit" ]; then
